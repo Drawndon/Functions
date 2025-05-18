@@ -66,10 +66,10 @@ void main()
 	int shift;
 	cout << "На какое число сдвинуть массив: "; cin >> shift;
 	ShiftLeft(arr, n, shift);
-	cout << "Массив arr сдвинут влево на " << shift << endl;
+	cout << "Массив arr сдвинут влево " << shift << endl;
 	Print(arr, n);
 	ShiftRight(arr, n);
-	cout << "Массив arr сдвинут вправо на " << shift << endl;
+	cout << "Массив arr сдвинут вправо" << endl;
 	Print(arr, n);
 
 	const int SIZE = 8;
@@ -83,10 +83,10 @@ void main()
 	cout << "Минимальное значение brr: " << MinValueIn(brr, SIZE) << endl;
 	cout << "Максимальное значение brr: " << MaxValueIn(brr, SIZE) << endl << endl;
 	ShiftLeft(brr, SIZE, shift);
-	cout << "Массив brr сдвинут влево на " << shift << endl;
+	cout << "Массив brr сдвинут влево " << shift << endl;
 	Print(brr, SIZE);
 	ShiftRight(brr, SIZE);
-	cout << "Массив brr сдвинут вправо на " << shift << endl;
+	cout << "Массив brr сдвинут вправо" << endl;
 	Print(brr, SIZE);
 
 }
