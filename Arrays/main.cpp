@@ -13,6 +13,13 @@ void Print(double arr[], const int n);
 void Sort(int arr[], const int n);
 void Sort(double arr[], const int n);
 
+int Sum(int arr[], const int n);			//Возвращает сумму элементов массива;
+int Avg(int arr[], const int n);			//Возвращает среднее-арифметическое элементов массива;
+int MinValueIn(int arr[], const int n);	//Возвращает минимальное значение в массиве;
+int MaxValueIn(int arr[], const int n);	//Возвращает максимальное значение в массиве;
+void ShiftLeft(int arr[], const int n);		//Циклически сдвигает массив на заданное количество элементов влево;
+void ShiftRight(int arr[], const int n);
+
 // 60 строк кода
 void main()
 {
