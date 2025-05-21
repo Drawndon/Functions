@@ -52,10 +52,10 @@ void ShiftRight(char arr[], const int n, int shift = 0);
 void main()
 {
 	setlocale(LC_ALL, "");
-	const int n = 5;
-	int arr[n];
+	const int n = 10;
+	int arr[n] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
-	FillRand(arr, n);
+	//FillRand(arr, n);
 	Print(arr, n);
 	Sort(arr, n);
 	Print(arr, n);
@@ -346,16 +346,7 @@ void ShiftLeft(char arr[], const int n, int shift)		//Циклически сд�
 
 void ShiftRight(int arr[], const int n, int shift)		//Циклически сдвигает массив на заданное количество элементов вправо;
 {
-	int buffer;
-	for (int i = 0; i < shift % n; i++)
-	{
-		buffer = arr[n - 1];
-		for (int j = n - 1; j > 0; j--)
-		{
-			arr[j] = arr[j - 1];
-		}
-		arr[0] = buffer;
-	}
+	ShiftLeft(arr, n, n - shift);
 }
 void ShiftRight(float arr[], const int n, int shift)		//Циклически сдвигает массив на заданное количество элементов вправо;
 {
