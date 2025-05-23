@@ -8,10 +8,8 @@ void FillRand(int arr[], const int n, int minRand = 0, int maxRand = 100);
 void FillRand(double arr[], const int n, int minRand = 0, int maxRand = 100);
 
 void Print(int arr[], const int n);
-void Print(double arr[], const int n);
 
 void Sort(int arr[], const int n);
-void Sort(double arr[], const int n);
 
 int Sum(int arr[], const int n);			//Возвращает сумму элементов массива;
 float Sum(float arr[], const int n);			//Возвращает сумму элементов массива;
@@ -117,15 +115,6 @@ void Print(int arr[], const int n)
 	}
 	cout << endl;
 }
-void Print(double arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-}
-
 
 
 void Sort(int arr[], const int n)
@@ -137,21 +126,6 @@ void Sort(int arr[], const int n)
 			if (arr[j] < arr[i])
 			{
 				int buffer = arr[i];
-				arr[i] = arr[j];
-				arr[j] = buffer;
-			}
-		}
-	}
-}
-void Sort(double arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = i + 1; j < n; j++)
-		{
-			if (arr[j] < arr[i])
-			{
-				double buffer = arr[i];
 				arr[i] = arr[j];
 				arr[j] = buffer;
 			}
