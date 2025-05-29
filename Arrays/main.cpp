@@ -4,29 +4,57 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+const int ROWS = 3;
+const int COLS = 4;
+
 void FillRand(int arr[], const int n, int minRand = 0, int maxRand = 100);
 void FillRand(double arr[], const int n, int minRand = 0, int maxRand = 100);
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS);
+
+
 template <typename T>
 void Print(T arr[], const int n);
+template <typename T>
+void Print(T arr[ROWS][COLS], const int ROWS, const int COLS);
+
+
 template<typename T>
 void Sort(T arr[], const int n);
+
+template <typename T>
+void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS);
+
+
 template<typename T>
 T Sum(T arr[], const int n);			//Возвращает сумму элементов массива;
+template <typename T>
+T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
 template<typename T>
 double Avg(T arr[], const int n);			//Возвращает среднее-арифметическое элементов массива;
+template <typename T>
+double Avg(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
 template<typename T>
 T MinValueIn(T arr[], const int n);	//Возвращает минимальное значение в массиве;
+template <typename T>
+T MinValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
 template<typename T>
 T MaxValueIn(T arr[], const int n);	//Возвращает максимальное значение в массиве;
+template <typename T>
+T MaxValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS);
+
 template<typename T>
 void ShiftLeft(T arr[], const int n, int shift = 0);		//Циклически сдвигает массив на заданное количество элементов влево;
+template <typename T>
+void ShiftLeft(T arr[ROWS][COLS], const int ROWS, const int COLS, int shift = 0);
+
 template<typename T>
 void ShiftRight(T arr[], const int n, int shift = 0);
+template <typename T>
+void ShiftRight(T arr[ROWS][COLS], const int ROWS, const int COLS, int shift = 0);
 
-// 60 строк кода
 void main()
 {
 	setlocale(LC_ALL, "");
@@ -34,7 +62,7 @@ void main()
 	int arr[n] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
 	//FillRand(arr, n);
-	Print(arr, n);
+	/*Print(arr, n);
 	Sort(arr, n);
 	Print(arr, n);
 	cout << endl << "Сумма чисел массива arr: " << Sum(arr, n) << endl;
@@ -65,8 +93,20 @@ void main()
 	Print(brr, SIZE);
 	ShiftRight(brr, SIZE);
 	cout << "Массив brr сдвинут вправо" << endl;
-	Print(brr, SIZE);
+	Print(brr, SIZE); */
 
+	int arr2[ROWS][COLS];
+	FillRand(arr2, ROWS, COLS);
+	Print(arr2, ROWS, COLS);
+	cout << "Сумма двумерного массива: " << Sum(arr2, ROWS, COLS) << endl;
+	cout << "Среднее арифметическое двумерного массива: " << Avg(arr2, ROWS, COLS) << endl;
+	cout << "Минимальное значение в двумерном массиве: " << MinValueIn(arr2, ROWS, COLS) << endl;
+	cout << "Максимальное значение в двумерном массиве: " << MaxValueIn(arr2, ROWS, COLS) << endl;
+	Sort(arr2, ROWS, COLS);
+	cout << endl << "Вывод отсортированного двумерного массива" << endl;
+	Print(arr2, ROWS, COLS);
+	//ShiftLeft(arr2, ROWS, COLS, 2);
+	//Print(arr2, ROWS, COLS);
 }
 void FillRand(int arr[], const int n, int minRand, int maxRand)
 {
@@ -84,6 +124,30 @@ void FillRand(double arr[], const int n, int minRand, int maxRand)
 		arr[i] = rand() % (maxRand - minRand) + minRand;
 		arr[i] /= 100;
 	}
+}
+
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = rand() % 100;
+		}
+	}
+}
+template <typename T>
+void Print(T arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+	cout << endl;
 }
 
 template <typename T>
@@ -113,6 +177,30 @@ void Sort(T arr[], const int n)
 	}
 }
 
+template <typename T>
+void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			for (int k = i; k < ROWS; k++)
+			{
+				for (int l = k > i ? 0 : j + 1; l < COLS; l++)
+				{
+						if (arr[k][l] < arr[i][j])
+						{
+							T buffer = arr[i][j];
+							arr[i][j] = arr[k][l];
+							arr[k][l] = buffer;
+						}
+				}
+			}
+
+		}
+	}
+}
+
 template<typename T>
 T Sum(T arr[], const int n)			//Возвращает сумму элементов массива;
 {
@@ -121,11 +209,30 @@ T Sum(T arr[], const int n)			//Возвращает сумму элементо
 	return s;
 }
 
+template <typename T>
+T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	T s = 0;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+			s += arr[i][j];
+	}
+	return s;
+}
+
 template<typename T>
 double Avg(T arr[], const int n)			//Возвращает среднее-арифметическое элементов массива;
 {
 	return (double)Sum(arr, n) / n;
 }
+
+template <typename T>
+double Avg(T arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	return (double)Sum(arr, ROWS, COLS) / (ROWS * COLS);
+}
+
 template<typename T>
 T MinValueIn(T arr[], const int n)	//Возвращает минимальное значение в массиве;
 {
@@ -136,6 +243,21 @@ T MinValueIn(T arr[], const int n)	//Возвращает минимальное
 	}
 	return min_value;
 }
+
+template <typename T>
+T MinValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	T min_value = arr[0][0];
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 1; j < COLS; j++)
+		{
+			if (arr[i][j] < min_value) min_value = arr[i][j];
+		}
+	}
+	return min_value;
+}
+
 template<typename T>
 T MaxValueIn(T arr[], const int n)	//Возвращает максимальное значение в массиве;
 {
@@ -145,6 +267,20 @@ T MaxValueIn(T arr[], const int n)	//Возвращает максимально
 			if (arr[i] > max_value) max_value = arr[i];
 		}
 		return max_value;
+}
+
+template <typename T>
+T MaxValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	T max_value = arr[0][0];
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 1; j < COLS; j++)
+		{
+			if (arr[i][j] > max_value) max_value = arr[i][j];
+		}
+	}
+	return max_value;
 }
 
 template<typename T>
@@ -161,6 +297,8 @@ void ShiftLeft(T arr[], const int n, int shift)		//Циклически сдви
 		arr[n - 1] = t;
 	}
 }
+
+
 template<typename T>
 void ShiftRight(T arr[], const int n, int shift)		//Циклически сдвигает массив на заданное количество элементов вправо;
 {
