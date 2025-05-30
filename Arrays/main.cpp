@@ -105,8 +105,12 @@ void main()
 	Sort(arr2, ROWS, COLS);
 	cout << endl << "Вывод отсортированного двумерного массива" << endl;
 	Print(arr2, ROWS, COLS);
-	//ShiftLeft(arr2, ROWS, COLS, 2);
-	//Print(arr2, ROWS, COLS);
+	ShiftLeft(arr2, ROWS, COLS, 2);
+	cout << "Массив сдвинут влево на 2" << endl;
+	Print(arr2, ROWS, COLS);
+	ShiftRight(arr2, ROWS, COLS, 2);
+	cout << "Массив сдвинут вправо на 2" << endl;
+	Print(arr2, ROWS, COLS);
 }
 void FillRand(int arr[], const int n, int minRand, int maxRand)
 {
@@ -298,9 +302,42 @@ void ShiftLeft(T arr[], const int n, int shift)		//Циклически сдви
 	}
 }
 
+template<typename T>
+void ShiftLeft(T arr[ROWS][COLS], const int ROWS, const int COLS, int shift)
+{
+	for (int k = 0; k < shift % COLS; k++)
+	{
+		for (int i = 0; i < ROWS; i++)
+		{
+			T buffer = arr[i][0];
+			for (int j = 1; j < COLS; j++)
+			{
+				arr[i][j - 1] = arr[i][j];
+			}
+			arr[i][COLS - 1] = buffer;
+		}
+	}
+}
 
 template<typename T>
 void ShiftRight(T arr[], const int n, int shift)		//Циклически сдвигает массив на заданное количество элементов вправо;
 {
 	ShiftLeft(arr, n, n - shift);
+}
+
+template<typename T>
+void ShiftRight(T arr[ROWS][COLS], const int ROWS, const int COLS, int shift)
+{
+	for (int k = 0; k < shift % COLS; k++)
+	{
+		for (int i = 0; i < ROWS; i++)
+		{
+			T buffer = arr[i][COLS - 1];
+			for (int j = COLS - 1; j > 0; j--)
+			{
+				arr[i][j] = arr[i][j - 1];
+			}
+			arr[i][0] = buffer;
+		}
+	}
 }
