@@ -1,6 +1,6 @@
-#include "MaxValueIn.h"
+п»ї#include "MaxValueIn.h"
 
-template<typename T>T MaxValueIn(T arr[], const int n)	//Возвращает максимальное значение в массиве;
+template<typename T>T MaxValueIn(T arr[], const int n)	//Р’РѕР·РІСЂР°С‰Р°РµС‚ РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ;
 {
 	int max_value = arr[0];
 	for (int i = 1; i < n; i++)

@@ -1,6 +1,6 @@
-#pragma once
+п»ї#pragma once
 #include "constants.h"
 
 
-template<typename T>T MaxValueIn(T arr[], const int n);	//Возвращает максимальное значение в массиве;
+template<typename T>T MaxValueIn(T arr[], const int n);	//Р’РѕР·РІСЂР°С‰Р°РµС‚ РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ;
 template <typename T>T MaxValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS);

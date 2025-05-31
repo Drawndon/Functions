@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include "constants.h"
-template<typename T>T Sum(T arr[], const int n);			//Возвращает сумму элементов массива;
+template<typename T>T Sum(T arr[], const int n);			//Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃСѓРјРјСѓ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°;
 template <typename T>T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS);

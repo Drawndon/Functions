@@ -1,5 +1,5 @@
-#pragma once
+п»ї#pragma once
 #include "constants.h"
 
-template<typename T>T MinValueIn(T arr[], const int n);	//Возвращает минимальное значение в массиве;
+template<typename T>T MinValueIn(T arr[], const int n);	//Р’РѕР·РІСЂР°С‰Р°РµС‚ РјРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ;
 template <typename T>T MinValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS);

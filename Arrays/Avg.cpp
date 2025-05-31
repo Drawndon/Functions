@@ -1,7 +1,7 @@
-#include "Avg.h"
+п»ї#include "Avg.h"
 
 
-template<typename T>double Avg(T arr[], const int n)			//Возвращает среднее-арифметическое элементов массива;
+template<typename T>double Avg(T arr[], const int n)			//Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃСЂРµРґРЅРµРµ-Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°;
 {
 	return (double)Sum(arr, n) / n;
 }

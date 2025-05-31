@@ -1,5 +1,5 @@
-#pragma once
+п»ї#pragma once
 #include "constants.h"
 
-template<typename T>void ShiftLeft(T arr[], const int n, int shift = 0);		//Циклически сдвигает массив на заданное количество элементов влево;
+template<typename T>void ShiftLeft(T arr[], const int n, int shift = 0);		//Р¦РёРєР»РёС‡РµСЃРєРё СЃРґРІРёРіР°РµС‚ РјР°СЃСЃРёРІ РЅР° Р·Р°РґР°РЅРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РІР»РµРІРѕ;
 template <typename T>void ShiftLeft(T arr[ROWS][COLS], const int ROWS, const int COLS, int shift = 0);

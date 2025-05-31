@@ -1,6 +1,6 @@
-#include "constants.h"
+п»ї#include "constants.h"
 
-template<typename T>void ShiftLeft(T arr[], const int n, int shift)		//Циклически сдвигает массив на заданное количество элементов влево;
+template<typename T>void ShiftLeft(T arr[], const int n, int shift)		//Р¦РёРєР»РёС‡РµСЃРєРё СЃРґРІРёРіР°РµС‚ РјР°СЃСЃРёРІ РЅР° Р·Р°РґР°РЅРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РІР»РµРІРѕ;
 {
 	T t;
 	for (int i = 0; i < shift % n; i++)

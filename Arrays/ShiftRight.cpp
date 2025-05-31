@@ -1,6 +1,6 @@
-#include "ShiftRight.h"
+п»ї#include "ShiftRight.h"
 
-template<typename T>void ShiftRight(T arr[], const int n, int shift)		//Циклически сдвигает массив на заданное количество элементов вправо;
+template<typename T>void ShiftRight(T arr[], const int n, int shift)		//Р¦РёРєР»РёС‡РµСЃРєРё СЃРґРІРёРіР°РµС‚ РјР°СЃСЃРёРІ РЅР° Р·Р°РґР°РЅРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РІРїСЂР°РІРѕ;
 {
 	ShiftLeft(arr, n, n - shift);
 }

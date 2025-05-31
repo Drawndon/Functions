@@ -1,5 +1,5 @@
-#include "Sum.h"
-template<typename T>T Sum(T arr[], const int n)			//Возвращает сумму элементов массива;
+п»ї#include "Sum.h"
+template<typename T>T Sum(T arr[], const int n)			//Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃСѓРјРјСѓ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°;
 {
 	T s = 0;
 	for (int i = 0; i < n; i++) s += arr[i];
